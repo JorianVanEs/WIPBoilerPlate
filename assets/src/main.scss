@@ -1,0 +1,56 @@
+// Placeholder Content
+
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+
+$primaryColor: whitesmoke;
+$secundaryColor: white;
+$tertiaryColor: crimson ;
+
+body{
+    margin: 0;
+    background-color: $primaryColor;
+    font-family: 'Lato', sans-serif;
+
+    #container{
+        width: 400px;
+        margin: 50px auto;
+        background-color: $secundaryColor;
+        border: 2px solid $tertiaryColor;
+        border-radius: 15px;
+        overflow: hidden;
+
+        header{
+            width: calc(100% - 20px);
+            padding: 10px;
+            background-color: $tertiaryColor;
+
+            h1{
+                font-size: 32px;
+                margin: 0;
+                text-align: center;
+                text-transform: uppercase;
+                color: white;
+            }
+        }
+
+        #image{
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+            background-image: url("../img/icons/cone.png");
+        }
+
+        section{
+            padding: 10px 50px;
+
+            h1{
+                color: $tertiaryColor;
+                margin: 0;
+            }
+
+            ul{
+                list-style-type: square;     
+            }
+        }
+    }
+}

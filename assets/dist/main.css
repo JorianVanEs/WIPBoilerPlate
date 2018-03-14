@@ -1,0 +1,33 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700);body {
+  margin: 0;
+  background-color: whitesmoke;
+  font-family: 'Lato', sans-serif; }
+  body #container {
+    width: 400px;
+    margin: 50px auto;
+    background-color: white;
+    border: 2px solid crimson;
+    border-radius: 15px;
+    overflow: hidden; }
+    body #container header {
+      width: calc(100% - 20px);
+      padding: 10px;
+      background-color: crimson; }
+      body #container header h1 {
+        font-size: 32px;
+        margin: 0;
+        text-align: center;
+        text-transform: uppercase;
+        color: white; }
+    body #container #image {
+      width: 200px;
+      height: 200px;
+      margin: 20px auto;
+      background-image: url(img/97efa30253418579ce6dce75dacdfad9.png); }
+    body #container section {
+      padding: 10px 50px; }
+      body #container section h1 {
+        color: crimson;
+        margin: 0; }
+      body #container section ul {
+        list-style-type: square; }
