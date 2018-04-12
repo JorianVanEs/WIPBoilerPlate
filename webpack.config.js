@@ -35,7 +35,7 @@ module.exports = {
             })
         },
         {
-            test: /\.(png|jpg)$/i,
+            test: /\.(png|jpg|gif|svg)$/i,
             loader: 'file-loader',
             options: {
                 outputPath: 'img'
