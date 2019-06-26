@@ -45,7 +45,9 @@ module.exports = {
     plugins: [
         new BrowserSyncPlugin({
           host: 'localhost',
-          server: { baseDir: ['./'] }
+          server: { baseDir: ['./'] },
+          notify: false
+          // proxy: 'https://www.jorianvan.es/nopixel/'
         }),
         extractSass
       ]

@@ -1,33 +1,337 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:400,700);body {
-  margin: 0;
-  background-color: whitesmoke;
-  font-family: 'Lato', sans-serif; }
-  body #container {
-    width: 400px;
-    margin: 50px auto;
-    background-color: white;
-    border: 2px solid crimson;
-    border-radius: 15px;
-    overflow: hidden; }
-    body #container header {
+.content {
+  width: calc(100% - 50px);
+  position: absolute;
+  left: 50px;
+  background: whitesmoke;
+  min-height: calc(100vh - 50px); }
+
+.header {
+  width: 100vw;
+  height: 50px;
+  background-image: linear-gradient(to right, crimson, darkslateblue, DodgerBlue);
+  position: relative; }
+  .header .user-segment {
+    width: 200px;
+    height: 200px;
+    float: right;
+    background: DodgerBlue;
+    display: flex;
+    position: absolute;
+    z-index: 100;
+    right: 0;
+    top: -150px;
+    cursor: pointer; }
+    .header .user-segment .user-pic {
+      width: 30px;
+      height: 30px;
+      background: white;
+      margin: 10px;
+      margin: 10px;
+      font-weight: bold;
+      color: white;
+      border-radius: 25px;
+      position: absolute;
+      bottom: 0; }
+    .header .user-segment .user-name {
+      height: 30px;
+      margin: 10px;
+      font-weight: bold;
+      color: white;
+      line-height: 30px;
+      position: absolute;
+      bottom: 0;
+      left: 50px; }
+
+.menu {
+  width: 250px;
+  height: calc(100vh - 50px);
+  position: fixed;
+  top: 50px;
+  left: -200px;
+  z-index: 100;
+  background: white;
+  box-shadow: 0px 1px 3px 0px gray;
+  user-select: none; }
+  .menu .toggle {
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+    position: absolute;
+    left: 200px;
+    cursor: pointer; }
+  .menu .menu-element {
+    width: 100%;
+    padding: 0;
+    margin: 50px 0; }
+    .menu .menu-element .menu-item {
       width: calc(100% - 20px);
-      padding: 10px;
-      background-color: crimson; }
-      body #container header h1 {
-        font-size: 32px;
-        margin: 0;
+      display: flex;
+      justify-content: space-between;
+      padding: 10px; }
+      .menu .menu-element .menu-item .menu-image {
+        width: 30px;
+        height: 30px; }
+      .menu .menu-element .menu-item span {
+        white-space: nowrap;
+        overflow: hidden;
+        line-height: 30px;
+        font-size: 14px; }
+      .menu .menu-element .menu-item:hover {
+        background-color: pink; }
+
+.home {
+  position: relative; }
+  .home .toolbar {
+    width: 100%;
+    height: 30px;
+    background: white;
+    border-bottom: 1px solid lightgrey; }
+    .home .toolbar .main-filter {
+      border: none; }
+  .home .add-character {
+    width: 300px;
+    height: 290px;
+    border-radius: 3px;
+    box-shadow: 0 0 2px 1px lightgray;
+    margin: 20px;
+    position: relative; }
+    .home .add-character input {
+      padding: 3px; }
+    .home .add-character .avatar {
+      width: 130px;
+      height: 130px;
+      margin: 10px 85px;
+      background: lightgray;
+      position: absolute;
+      top: 0; }
+      .home .add-character .avatar .preview-avatar {
+        width: 100px;
+        height: 100px; }
+    .home .add-character .names {
+      width: 250px;
+      margin: 0 20px;
+      display: flex;
+      position: absolute;
+      top: 170px; }
+      .home .add-character .names .name {
+        width: 125px; }
+        .home .add-character .names .name:not(:nth-child(2)) {
+          margin-right: 10px; }
+    .home .add-character .occupation {
+      width: 260px;
+      margin: 0 20px;
+      position: absolute;
+      top: 205px; }
+    .home .add-character .twitch {
+      position: absolute;
+      bottom: 0;
+      width: calc(100% - 14px);
+      padding: 7px;
+      background: darkslateblue;
+      display: flex;
+      justify-content: space-between;
+      border-radius: 0 0 3px 3px; }
+      .home .add-character .twitch .twitch-icon, .home .add-character .twitch .filler {
+        width: 24px;
+        height: 24px;
+        margin: 3px; }
+  .home .card-wrapper {
+    width: calc(100% - 40px);
+    margin: 0 20px 20px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative; }
+    .home .card-wrapper .card {
+      margin: 20px 20px 0 0; }
+
+.factions .faction-header {
+  width: 100%;
+  height: 30px;
+  background: white;
+  border-bottom: 1px solid lightgrey;
+  line-height: 30px;
+  font-size: 16px;
+  text-align: center; }
+  .factions .faction-header .button-add {
+    width: 100px;
+    background: #f1f1f1;
+    color: gray;
+    cursor: pointer;
+    user-select: none; }
+    .factions .faction-header .button-add:hover {
+      background: #e1e1e1; }
+
+.factions .faction-tools {
+  width: calc(100% - 20px);
+  height: 30px;
+  padding: 0 10px;
+  background: white;
+  border-bottom: 1px solid lightgrey;
+  display: flex;
+  justify-content: space-between;
+  line-height: 30px;
+  font-size: 12px;
+  font-weight: bold; }
+  .factions .faction-tools .tools-filler-image {
+    width: 30px;
+    height: 30px; }
+  .factions .faction-tools .tools-title {
+    width: 300px; }
+  .factions .faction-tools .tools-leader {
+    width: 100px; }
+  .factions .faction-tools .tools-members {
+    width: 80px; }
+  .factions .faction-tools .tools-filler-buttons {
+    width: 80px;
+    height: 30px; }
+
+.factions .faction-list {
+  width: calc(100% - 40px);
+  height: 100%;
+  padding: 0;
+  margin: 20px;
+  background: white;
+  list-style: none;
+  border: 1px solid lightgrey;
+  border-bottom: none;
+  border-radius: 3px; }
+  .factions .faction-list .faction-list-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    line-height: 30px;
+    font-size: 12px;
+    border-bottom: 1px solid lightgrey; }
+    .factions .faction-list .faction-list-item .item-icon {
+      width: 30px;
+      height: 30px;
+      background: royalblue; }
+    .factions .faction-list .faction-list-item .item-title {
+      width: 300px; }
+    .factions .faction-list .faction-list-item .item-leader {
+      width: 100px; }
+    .factions .faction-list .faction-list-item .item-members {
+      width: 80px; }
+    .factions .faction-list .faction-list-item .item-buttons {
+      width: 80px;
+      height: 30px;
+      display: flex;
+      justify-content: space-around; }
+      .factions .faction-list .faction-list-item .item-buttons .item-button {
+        width: 30px;
+        height: 30px;
+        background: royalblue; }
+
+.card {
+  width: 150px;
+  height: 220px;
+  position: relative;
+  box-shadow: 0 0 2px 1px lightgray;
+  background: white; }
+  .card .avatar {
+    width: 130px;
+    height: 130px;
+    margin: 10px;
+    background: lightgray; }
+  .card .character-information {
+    text-align: center; }
+    .card .character-information .name {
+      font-size: 14px;
+      margin-bottom: 5px;
+      font-weight: 700; }
+    .card .character-information .title {
+      font-size: 11px; }
+  .card .socialElements {
+    width: 100%;
+    position: absolute;
+    bottom: 0; }
+    .card .socialElements .twitch, .card .socialElements .twitter {
+      width: 100%;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      cursor: pointer; }
+      .card .socialElements .twitch .tooltip, .card .socialElements .twitter .tooltip {
+        visibility: hidden;
+        width: 140px;
+        background-color: darkslateblue;
+        color: #fff;
         text-align: center;
-        text-transform: uppercase;
-        color: white; }
-    body #container #image {
-      width: 200px;
-      height: 200px;
-      margin: 20px auto;
-      background-image: url(img/7d8ed83d2cd11ec7958d41f2102edc83.svg); }
-    body #container section {
-      padding: 10px 50px; }
-      body #container section h1 {
-        color: crimson;
-        margin: 0; }
-      body #container section ul {
-        list-style-type: square; }
+        border-radius: 3px;
+        padding: 5px 0;
+        position: absolute;
+        z-index: 1;
+        bottom: 125%;
+        left: 50%;
+        margin-left: -70px;
+        opacity: 0;
+        transition: opacity 0.3s;
+        font-size: 12px;
+        display: flex;
+        justify-content: space-around; }
+        .card .socialElements .twitch .tooltip::after, .card .socialElements .twitter .tooltip::after {
+          content: "";
+          position: absolute;
+          top: 100%;
+          left: 50%;
+          margin-left: -5px;
+          border-style: solid;
+          border-color: #555 transparent transparent transparent; }
+        .card .socialElements .twitch .tooltip .viewers, .card .socialElements .twitter .tooltip .viewers {
+          width: 50%;
+          padding: 0 10px;
+          display: flex;
+          justify-content: space-around;
+          align-items: center; }
+          .card .socialElements .twitch .tooltip .viewers span, .card .socialElements .twitter .tooltip .viewers span {
+            margin: 0;
+            padding: 0; }
+          .card .socialElements .twitch .tooltip .viewers .icon, .card .socialElements .twitter .tooltip .viewers .icon {
+            width: 12.5px;
+            height: 12.5px; }
+      .card .socialElements .twitch:hover .tooltip, .card .socialElements .twitter:hover .tooltip {
+        visibility: visible;
+        opacity: 1; }
+    .card .socialElements .twitch {
+      background: darkslateblue; }
+    .card .socialElements .twitter {
+      background: dodgerblue; }
+    .card .socialElements .twitch-icon, .card .socialElements .twitter-icon, .card .socialElements .filler {
+      width: 16px;
+      height: 16px;
+      margin: 5px; }
+    .card .socialElements .live-indicator {
+      width: 13px;
+      height: 13px;
+      margin: 6.5px;
+      border-radius: 50%; }
+    .card .socialElements .inactive {
+      background-color: #432387; }
+    .card .socialElements .active {
+      background-color: #de1212; }
+      .card .socialElements .active::after {
+        content: '';
+        display: block;
+        height: inherit;
+        position: absolute;
+        z-index: 10;
+        width: inherit;
+        border-radius: 100%;
+        background-color: inherit;
+        animation: 2s ease-out signal infinite;
+        opacity: .8; }
+
+@keyframes signal {
+  20%, 100% {
+    opacity: 0;
+    transform: scale(3); } }
+    .card .socialElements .streamer {
+      color: white;
+      margin: 5px;
+      line-height: 16px;
+      font-size: 14px;
+      text-align: center;
+      max-width: 90px;
+      white-space: nowrap;
+      overflow: hidden; }

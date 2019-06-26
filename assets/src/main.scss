@@ -1,56 +1,483 @@
-// Placeholder Content
+//General Style
 
-@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+.content{
+  width: calc(100% - 50px);
+  position: absolute;
+  left: 50px;
+  background: whitesmoke;
+  min-height: calc(100vh - 50px);
+}
 
-$primaryColor: whitesmoke;
-$secundaryColor: white;
-$tertiaryColor: crimson ;
+// Header Style
 
-body{
-    margin: 0;
-    background-color: $primaryColor;
-    font-family: 'Lato', sans-serif;
+.header{
+  width: 100vw;
+  height: 50px;
+  background-image: linear-gradient(to right, crimson, darkslateblue, DodgerBlue);
+  position: relative;
 
-    #container{
-        width: 400px;
-        margin: 50px auto;
-        background-color: $secundaryColor;
-        border: 2px solid $tertiaryColor;
-        border-radius: 15px;
-        overflow: hidden;
+  .user-segment{
+    width: 200px;
+    height: 200px;
+    float: right;
+    background: DodgerBlue;
+    display: flex;
+    position: absolute;
+    z-index: 100;
+    right: 0;
+    top: -150px;
+    cursor: pointer;
 
-        header{
-            width: calc(100% - 20px);
-            padding: 10px;
-            background-color: $tertiaryColor;
-
-            h1{
-                font-size: 32px;
-                margin: 0;
-                text-align: center;
-                text-transform: uppercase;
-                color: white;
-            }
-        }
-
-        #image{
-            width: 200px;
-            height: 200px;
-            margin: 20px auto;
-            background-image: url("./img/icons/cone.svg");
-        }
-
-        section{
-            padding: 10px 50px;
-
-            h1{
-                color: $tertiaryColor;
-                margin: 0;
-            }
-
-            ul{
-                list-style-type: square;
-            }
-        }
+    .user-pic{
+      width: 30px;
+      height: 30px;
+      background: white;
+      margin: 10px;
+      margin: 10px;
+      font-weight: bold;
+      color: white;
+      border-radius: 25px;
+      position: absolute;
+      bottom: 0;
     }
+
+    .user-name{
+      height: 30px;
+      margin: 10px;
+      font-weight: bold;
+      color: white;
+      line-height: 30px;
+      position: absolute;
+      bottom: 0;
+      left: 50px;
+    }
+  }
+}
+
+// Menu Style
+
+.menu{
+  width: 250px;
+  height: calc(100vh - 50px);
+  position: fixed;
+  top: 50px;
+  left: -200px;
+  z-index: 100;
+  background: white;
+  box-shadow: 0px 1px 3px 0px gray;
+  user-select: none;
+
+  .toggle{
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+    position: absolute;
+    left: 200px;
+    cursor: pointer;
+  }
+
+  .menu-element{
+    width: 100%;
+    padding: 0;
+    margin: 50px 0;
+
+    .menu-item{
+      width: calc(100% - 20px);
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+
+      .menu-image{
+        width: 30px;
+        height: 30px;
+      }
+
+      span{
+        white-space: nowrap;
+        overflow: hidden;
+        line-height: 30px;
+        font-size: 14px;
+      }
+
+      &:hover{
+        background-color: pink;
+      }
+    }
+  }
+}
+
+// Home Style
+
+.home{
+  position: relative;
+
+  .toolbar{
+    width: 100%;
+    height: 30px;
+    background: white;
+    border-bottom: 1px solid lightgrey;
+
+    .main-filter{
+      border: none;
+
+      .main-filter-options{
+
+      }
+    }
+  }
+
+  .add-character{
+    width: 300px;
+    height: 290px;
+    border-radius: 3px;
+    box-shadow: 0 0 2px 1px lightgray;
+    margin: 20px;
+    position: relative;
+
+    input{
+      padding: 3px;
+    }
+
+    .avatar{
+      width: 130px;
+      height: 130px;
+      margin: 10px 85px;
+      background: lightgray;
+      position: absolute;
+      top: 0;
+
+      .preview-avatar{
+        width: 100px;
+        height: 100px;
+      }
+    }
+
+    .names{
+      width: 250px;
+      margin: 0 20px;
+      display: flex;
+      position: absolute;
+      top: 170px;
+
+      .name{
+        width: 125px;
+
+        &:not(:nth-child(2)){
+          margin-right: 10px;
+        }
+      }
+    }
+
+    .occupation{
+      width: 260px;
+      margin: 0 20px;
+      position: absolute;
+      top: 205px;
+    }
+
+    .twitch{
+      position: absolute;
+      bottom: 0;
+      width: calc(100% - 14px);
+      padding: 7px;
+      background: darkslateblue;
+      display: flex;
+      justify-content: space-between;
+       border-radius: 0 0 3px 3px;
+
+       .twitch-icon, .filler{
+         width: 24px;
+         height: 24px;
+         margin: 3px;
+       }
+    }
+  }
+
+  .card-wrapper{
+    width: calc(100% - 40px);
+    margin: 0 20px 20px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+
+    .card{
+      margin: 20px 20px 0 0;
+    }
+  }
+
+}
+
+// Factions Style
+
+.factions{
+
+  .faction-header{
+    width: 100%;
+    height: 30px;
+    background: white;
+    border-bottom: 1px solid lightgrey;
+    line-height: 30px;
+    font-size: 16px;
+    text-align: center;
+
+    .button-add{
+      width: 100px;
+      background: #f1f1f1;
+      color: gray;
+      cursor: pointer;
+      user-select: none;
+
+      &:hover{
+       background: #e1e1e1;
+      }
+    }
+  }
+
+  .faction-tools{
+    width: calc(100% - 20px);
+    height: 30px;
+    padding: 0 10px;
+    background: white;
+    border-bottom: 1px solid lightgrey;
+    display: flex;
+    justify-content: space-between;
+    line-height: 30px;
+    font-size: 12px;
+    font-weight: bold;
+
+    .tools-filler-image{
+      width: 30px;
+      height: 30px;
+    }
+
+    .tools-title{
+      width: 300px;
+    }
+
+    .tools-leader{
+      width: 100px;
+    }
+
+    .tools-members{
+      width: 80px;
+    }
+
+    .tools-filler-buttons{
+      width: 80px;
+      height: 30px;
+    }
+  }
+
+  .faction-list{
+    width: calc(100% - 40px);
+    height: 100%;
+    padding: 0;
+    margin: 20px;
+    background: white;
+    list-style: none;
+    border: 1px solid lightgrey;
+    border-bottom: none;
+    border-radius: 3px;
+
+    .faction-list-item{
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+      line-height: 30px;
+      font-size: 12px;
+      border-bottom: 1px solid lightgrey;
+
+      .item-icon{
+        width: 30px;
+        height: 30px;
+        background: royalblue;
+      }
+
+      .item-title{
+        width: 300px;
+      }
+
+      .item-leader{
+        width: 100px;
+      }
+
+      .item-members{
+        width: 80px;
+      }
+
+      .item-buttons{
+        width: 80px;
+        height: 30px;
+        display: flex;
+        justify-content: space-around;
+
+        .item-button{
+          width: 30px;
+          height: 30px;
+          background: royalblue;
+        }
+      }
+    }
+  }
+}
+
+// Character card
+
+.card{
+  width: 150px;
+  height: 220px;
+  // border-radius: 3px;
+  position: relative;
+  box-shadow: 0 0 2px 1px lightgray;
+  background: white;
+
+  .avatar{
+    width: 130px;
+    height: 130px;
+    margin: 10px;
+    background: lightgray;
+  }
+
+  .character-information{
+    text-align: center;
+
+    .name{
+      font-size: 14px;
+      margin-bottom: 5px;
+      font-weight: 700;
+    }
+
+    .title{
+      font-size: 11px;
+    }
+  }
+
+  .socialElements{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+
+    .twitch, .twitter{
+      width: 100%;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      cursor: pointer;
+
+      .tooltip {
+        visibility: hidden;
+        width: 140px;
+        background-color: darkslateblue;
+        color: #fff;
+        text-align: center;
+        border-radius: 3px;
+        padding: 5px 0;
+        position: absolute;
+        z-index: 1;
+        bottom: 125%;
+        left: 50%;
+        margin-left: -70px;
+        opacity: 0;
+        transition: opacity 0.3s;
+        font-size: 12px;
+        display: flex;
+        justify-content: space-around;
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 100%;
+          left: 50%;
+          margin-left: -5px;
+          border-style: solid;
+          border-color: #555 transparent transparent transparent;
+        }
+
+        .viewers{
+          width: 50%;
+          padding: 0 10px;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+
+          span{
+            margin: 0;
+            padding: 0;
+          }
+
+          .icon{
+            width: 12.5px;
+            height: 12.5px;
+          }
+        }
+      }
+
+      &:hover .tooltip {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+
+    .twitch{
+      background: darkslateblue;
+      // border-radius: 0 0 3px 3px;
+    }
+
+    .twitter{
+      background: dodgerblue;
+    }
+
+    .twitch-icon, .twitter-icon, .filler{
+      width: 16px;
+      height: 16px;
+      margin: 5px;
+    }
+
+    .live-indicator{
+      width: 13px;
+      height: 13px;
+      margin: 6.5px;
+      border-radius: 50%;
+    }
+
+    .inactive{
+      background-color: #432387;
+    }
+
+    .active{
+      background-color: #de1212;
+
+      &::after {
+        content: '';
+        display: block;
+        height: inherit;
+        position: absolute;
+        z-index: 10;
+        width: inherit;
+        border-radius: 100%;
+        background-color: inherit;
+        animation: 2s ease-out signal infinite;
+        opacity: .8;
+      }
+    }
+
+    @keyframes signal {
+      20%, 100% {
+          opacity: 0;
+          transform: scale(3);
+      }
+    }
+
+    .streamer{
+      color: white;
+      margin: 5px;
+      line-height: 16px;
+      font-size: 14px;
+      text-align: center;
+      max-width: 90px;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  }
 }
